@@ -32,7 +32,7 @@ input, textarea {
 }
 
 .contact-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #242424 inset;
+  -webkit-box-shadow: 0 0 0 1000px #333333 inset;
   -webkit-text-fill-color: #ffffff;
   caret-color: #ffffff;
   color: #ffffff;

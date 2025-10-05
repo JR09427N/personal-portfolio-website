@@ -35,8 +35,8 @@ listTools();
 
 listProcess();
 
-listProjects(projects_left_column, projects_column_lef);
-listProjects(projects_right_column, projects_column_rig);
+listProjects(projects_left_column, projects_column_lef, 2);
+listProjects(projects_right_column, projects_column_rig, 2);
 
 function listServices(column) {
   let serviceContainer = document.getElementById(column);
@@ -86,6 +86,28 @@ function listTools() {
   toolContainer.innerHTML = tempHTML;
 }
 
+let isExpanded = false;
+
+function expandBtnClicked() {
+  isExpanded = !isExpanded;
+
+  let expandBtnText = document.getElementById("projects-see-more-txt");
+
+  if(isExpanded) {
+    listProjects(projects_left_column, projects_column_lef, 4);
+    listProjects(projects_right_column, projects_column_rig, 4);
+    expandBtnText.innerText = "See less";
+  }
+
+  else {
+    listProjects(projects_left_column, projects_column_lef, 2);
+    listProjects(projects_right_column, projects_column_rig, 2);
+    expandBtnText.innerText = "See more";
+  }
+}
+
+window.expandBtnClicked = expandBtnClicked;
+
 function listProcess() {
     let processContainer = document.getElementById('about-steps-column-container');
 
@@ -106,10 +128,10 @@ function listProcess() {
     processContainer.innerHTML = tempHTML;
 }
 
-function listProjects(projects, projectsColumn) {
+function listProjects(projects, projectsColumn, numProjects) {
   let tempHTML = "";
 
-  for(let i = 0; i < projects.length; i++) {
+  for(let i = 0; i < numProjects; i++) {
 
     let tempBubbleHTML = "";
     for(let j = 0; j < projects[i].bubbles.length; j++) {
@@ -134,6 +156,7 @@ function listProjects(projects, projectsColumn) {
     projectsColumn.innerHTML = tempHTML;
 
     const expandBtns = projectsColumn.querySelectorAll('.project-expand-btn');
+    const seeMoreGroup = document.getElementById('projects-see-more-group');
     expandBtns.forEach((btn, index) => {
       btn.addEventListener('click', () => {
         const descContainer = projectsColumn.querySelectorAll('.project-desc-container')[index];
@@ -143,17 +166,72 @@ function listProjects(projects, projectsColumn) {
 
         if (descContainer.classList.contains('active')) {
           expandBtn.style.transform = 'rotate(180deg)';
+          seeMoreGroup.style.marginTop = "40px";
         } else {
           expandBtn.style.transform = 'rotate(360deg)';
+          seeMoreGroup.style.marginTop = "0px";
         }
 
       });
     });
   }
+
+  console.log("List Projects Called: n =", numProjects);
 }
 
 function expandClicked() {
   let project_desc = document.getElementById('project-desc-container');
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const menuSection = document.getElementById('menu-section');
+  let menuOpen = false;
+
+  if (menuSection) {
+    menuSection.style.opacity = "0%";
+    menuSection.style.pointerEvents = "none";
+    menuSection.style.transition = "opacity 0.3s ease-in-out";
+  }
+
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      
+      if(menuOpen) {
+        menuSection.style.opacity = "1";
+        menuSection.style.pointerEvents = "auto";
+        document.body.style.overflow = "hidden"
+      } else {
+        menuSection.style.opacity = "0";
+        menuSection.style.pointerEvents = "none";
+        document.body.style.overflow = ""
+      }
+      
+      console.log("menu clicked", menuOpen);
+    });
+  }
+
+  const menuLinks = document.querySelectorAll('#menu-section a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuOpen = false;
+      menuSection.style.opacity = "0";
+      menuSection.style.pointerEvents = "none";
+      document.body.style.overflow = "";
+    });
+  });
+
+  const menuClose = document.getElementById('menu-close-img');
+  if (menuClose) {
+    menuClose.addEventListener('click', () => {
+      menuOpen = false;
+      menuSection.style.opacity = "0";
+      menuSection.style.pointerEvents = "none";
+      document.body.style.overflow = "";
+    });
+  }
+});
 
 console.log("JS Loaded Successfully");
