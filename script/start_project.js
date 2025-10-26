@@ -174,6 +174,17 @@ function infoListener() {
 }
 
 function reviewListener() {
+
+  function formatUSPhoneNumber(phoneNumber) {
+    const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+      return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+    }
+
+    return phoneNumber;
+  }
+
   console.log('reviewListener()');
   console.log(request);
 
@@ -198,13 +209,12 @@ function reviewListener() {
   const detailsText = document.querySelector('#start-project-review-details p');
   const infoText = document.getElementById('start-project-review-info-group');
   const skip = document.getElementById('start-project-skip-btn');
-  // const back = document.getElementById('start-project-back-btn');
 
   serviceText.innerHTML = "<p>" + request.service + "</p>";
   detailsText.innerHTML = "<p>" + request.details + "</p>";
   infoText.innerHTML = "<p><span>Full Name:&nbsp;&nbsp;</span>" + request.info.name + "</p>" +
                         "<p><span>Email:&nbsp;&nbsp;</span>" + request.info.email + "</p>" +
-                        "<p><span>Phone Number:&nbsp;&nbsp;</span>" + request.info.number + "</p>";
+                        "<p><span>Phone Number:&nbsp;&nbsp;</span>" + formatUSPhoneNumber(request.info.number) + "</p>";
 
   skip.disabled = true;
 }
