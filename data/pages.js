@@ -71,22 +71,22 @@ export const pages = [
                 "<div class='start-project-review-row' id='start-project-review-service'>" +
                 "<h1>SERVICE</h1>" +
                 "<p></p>" +
-                "<a>Edit</a>" +
+                "<a onclick='goToPage(-1)'>Edit</a>" +
                 "</div>" +
                 "<div class='start-project-review-horiz-line'></div>" +
                 "<div class='start-project-review-row' id='start-project-review-details'>" +
                 "<h1>DETAILS</h1>" +
                 "<p></p>" +
-                "<a>Edit</a>" +
+                "<a onclick='goToPage(0)'>Edit</a>" +
                 "</div>" +
                 "<div class='start-project-review-horiz-line'></div>" +
                 "<div class='start-project-review-row' id='start-project-review-info'>" +
                 "<h1>YOUR INFO</h1>" +
                 "<div id='start-project-review-info-group'>" +
                 "</div>" +
-                "<a>Edit</a>" +
+                "<a onclick='goToPage(1)'>Edit</a>" +
                 "</div>" +
-                "<button type='submit' class='start-project-next-btn' id='start-project-submit-btn'>" +
+                "<button type='submit' class='start-project-next-btn' id='start-project-submit-btn' onclick='sendProjectRequest()' on>" +
                 "Submit Request" +
                 "</button>" +
                 "</div>"

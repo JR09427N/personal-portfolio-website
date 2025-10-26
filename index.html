@@ -13,6 +13,32 @@
         <img id="hamburger" src="assets/hamburger.svg" alt="MENU"/>
     </header>
 
+    <section id="start-project">
+        <header id="start-project-header">
+            <button onclick="prevPage()" class="start-project-nav-button" id="start-project-back-btn">
+                <img src="assets/start-project-arrow.svg" alt="BACK"/>
+                <p>Back</p>
+            </button>
+            <div id="start-project-progressbar-container">
+                <div class="start-project-progress">
+                    <div class="start-project-progressbar-fill" id="start-project-progress-1"></div>
+                </div>
+                <div class="start-project-progress">
+                    <div class="start-project-progressbar-fill" id="start-project-progress-2"></div>
+                </div>
+                <div class="start-project-progress">
+                    <div class="start-project-progressbar-fill" id="start-project-progress-3"></div>
+                </div>
+            </div>
+            <button onclick="nextPage()" class="start-project-nav-button" id="start-project-skip-btn">
+                <p>Skip</p>
+                <img src="assets/start-project-arrow.svg" alt="SKIP"/>
+            </button>
+        </header>
+        <section id="start-project-content-container">
+        </section>
+    </section>
+
     <section id="menu-section">
         <img id="menu-close-img" src="assets/menu-close.svg" alt="CLOSE"/>
         <div class="menu-row"><a href="#home"><p>HOME</p><img src="assets/menu-arrow.svg" alt="ARROW"/></a></div>
@@ -165,5 +191,6 @@
 
     </section>
     <script type="module" src="script/script.js"></script>
+    <script type="module" src="script/start_project.js"></script>
 </body>
 </html>
