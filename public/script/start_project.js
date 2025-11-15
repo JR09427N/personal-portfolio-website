@@ -15,6 +15,7 @@ let spOpen = false;
 const progress1 = document.getElementById('start-project-progress-1');
 const progress2 = document.getElementById('start-project-progress-2');
 const progress3 = document.getElementById('start-project-progress-3');
+const menu = document.getElementById('mobile-nav-container');
 
 document.addEventListener('DOMContentLoaded', () => {
   const spButton = document.getElementById('home-start-project-btn');
@@ -33,11 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if(spOpen) {
         startProject.style.opacity = "1";
         startProject.style.pointerEvents = "auto";
-        document.body.style.overflow = "hidden"
+        document.body.style.overflow = "hidden";
+        menu.style.display = "none";
       } else {
         startProject.style.opacity = "0";
         startProject.style.pointerEvents = "none";
-        document.body.style.overflow = ""
+        document.body.style.overflow = "";
+        menu.style.display = "flex";
       }
       
       console.log("start project clicked", spOpen);
@@ -265,6 +268,7 @@ function prevPage() {
   } else {
       const startProject = document.getElementById('start-project');
       spOpen = false;
+      menu.style.display = "flex";
       if (startProject) {
         startProject.style.opacity = "0";
         startProject.style.pointerEvents = "none";

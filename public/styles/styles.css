@@ -220,12 +220,7 @@ header a {
 }
 
 #about-photo {
-    background-color: #00000000;
-    width: 100%;
-    max-width: 338px;
-    height: 490px;
-    order: 2;
-    margin-left: auto;
+    display: none;
 }
 
 #about-serv-left-group, #about-serv-right-group {
@@ -696,6 +691,10 @@ footer {
     align-items: center;
 }
 
+.start-project-nav-button:hover {
+    cursor: pointer;
+}
+
 .start-project-nav-button img {
     width: 10px;
     height: 20px;
@@ -788,6 +787,7 @@ footer {
     font-size: 15px;
     color: #00EEFF;
     transition: 0.1s ease-in-out;
+    cursor: pointer;
 }
 
 #service-buttons-column-container div button:hover {
@@ -952,6 +952,7 @@ footer {
     color: #00EEFF;
     text-decoration: underline;
     text-underline-offset: 23%;
+    cursor: pointer;
 }
 
 .start-project-review-info-group span {
@@ -968,7 +969,15 @@ footer {
 @media (max-width: 1024px) {
     
     #about-photo {
-        background-color: #000000;
+        display: inline;
+        /* background-color: #000000; */
+        background-image: linear-gradient(to top, #001011, #000000);
+        width: 100%;
+        max-width: 338px;
+        height: 400px;
+        order: 2;
+        margin-left: auto;
+        border-radius: 5px;
     }
 
     #bkg-animation {
