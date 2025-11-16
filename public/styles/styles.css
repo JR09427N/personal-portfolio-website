@@ -52,6 +52,11 @@ header a {
     font-weight: 300;
     font-size: 15px;
     color: #FFFFFF;
+    transition: color 0.1s ease-in-out;
+}
+
+header a:hover {
+    color: #00EEFF;
 }
 
 .nav-link-active {
