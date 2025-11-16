@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (spButton) {
+    console.log(window.innerWidth);
     spButton.addEventListener('click', () => {
       spOpen = !spOpen;
       
@@ -40,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         startProject.style.opacity = "0";
         startProject.style.pointerEvents = "none";
         document.body.style.overflow = "";
-        menu.style.display = "flex";
+
+        revealMenu();
       }
       
       console.log("start project clicked", spOpen);
@@ -268,7 +270,7 @@ function prevPage() {
   } else {
       const startProject = document.getElementById('start-project');
       spOpen = false;
-      menu.style.display = "flex";
+      revealMenu();
       if (startProject) {
         startProject.style.opacity = "0";
         startProject.style.pointerEvents = "none";
@@ -312,6 +314,18 @@ function goToPage(page) {
   nextPage();
 }
 window.goToPage = goToPage;
+
+window.addEventListener('resize', revealMenu);
+
+function revealMenu() {
+  if(window.innerWidth < 768 && !spOpen) {
+    menu.style.display = "flex";
+  } else {
+    menu.style.display = "none";
+  }
+
+  console.log("resize");
+}
 
 async function sendProjectRequest() {
   const endpoint = "https://api.web3forms.com/submit";
