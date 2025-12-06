@@ -2,7 +2,7 @@ import { projects_left_column, projects_right_column } from '../data/projects.js
 import { process } from '../data/process.js';
 
 let hello = document.getElementById('hello');
-let hello_colors = ['#FFFF00', '#00EEFF', '#00FF00', '#FFA500'];
+let hello_colors = ['#00828bff', '#008a00ff', '#242424'];
 let colors_length = hello_colors.length;
 
 // Wrap text in span for animation
@@ -30,7 +30,7 @@ function updateGradient() {
 }
 
 updateGradient();
-setInterval(updateGradient, 4000);
+setInterval(updateGradient, 1200);
 
 let sections = document.querySelectorAll('#home, #about, #projects, #contact');
 let navLinks = document.querySelectorAll('header a');

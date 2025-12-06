@@ -34,6 +34,7 @@
     top: 45px;
     left: 6.9vw;
     z-index: 9999;
+    cursor: pointer;
 }
 
 .black-rounded-rectangle-bkg {
