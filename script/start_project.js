@@ -55,7 +55,7 @@ function serviceListener() {
   progress3.style.width = "0%";
 
   const service_container = document.getElementById('service-buttons-column-container');
-  const next = document.getElementById('start-project-next-btn');
+  // const next = document.getElementById('start-project-next-btn');
 
   if (service_container) {
     service_container.addEventListener('click', (e) => {
@@ -64,14 +64,18 @@ function serviceListener() {
         e.target.classList.add('service-btn-clicked');
         request.service = e.target.value;
 
+        setTimeout(() => {
+          nextPage();
+        }, 500);
+
         console.log("request service: ", request.service);
       }
 
-      next.disabled = request.service.length === 0;
+      // next.disabled = request.service.length === 0;
     });
   }
 
-  next.disabled = request.service.length === 0;
+  // next.disabled = request.service.length === 0;
 }
 
 function detailsListener() {
@@ -273,6 +277,8 @@ function prevPage() {
       request.info.name = "";
       request.info.email = "";
       request.info.number = "";
+
+      index = -1;
   }
 
   switch(index) {

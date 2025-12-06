@@ -745,8 +745,9 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
     width: 100%;
-    padding-left: 200px;
-    padding-right: 200px;
+    min-width: 1200px;
+    padding-left: 350px;
+    padding-right: 350px;
 }
 
 #service-buttons-column-container div {
@@ -758,30 +759,33 @@ footer {
 }
 
 #service-buttons-column-container div button {
-    background-color: #00EEFF;
-    border-radius: 10px;
+    background-color: #242424;
+    border-radius: 100px;
     width: 100%;
-    height: 42px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #A0A0A0;
-    box-shadow: inset 3px 0 4px 0 rgba(0, 0, 0, 0.25),
-                inset -3px -4px 4px 0 rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25),
+                0 0 4px 0 rgba(0, 0, 0, 0.25);
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
     font-size: 15px;
-    color: #000000;
+    color: #00EEFF;
+    transition: 0.1s ease-in-out;
 }
 
 #service-buttons-column-container div button:hover {
-    background-color: #00c6d4;
+    border: 1px solid #00EEFF;
+    /* color: #FFFFFF; */
 }
 
 #service-buttons-column-container div button.service-btn-clicked {
-    background-color: transparent;
-    box-shadow: none;
-    color: #00EEFF;
+    background-color: #101010;
+    border: 1px solid transparent;
+    box-shadow: 4 4 4px 0 rgba(0, 0, 0, 0.55),
+                -4 -4 4px 0 rgba(0, 0, 0, 0.55);
 }
 
 .start-project-next-btn {
@@ -789,11 +793,10 @@ footer {
     min-width: 300px;
     margin-left: 700px;
     margin-right: 700px;
-
-    background-color: #00EEFF;
-    height: 42px;
-    border-radius: 10px;
-    border: 2px solid #A0A0A0;
+    border: 1px solid transparent;
+    background-color: #242424;
+    height: 45px;
+    border-radius: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -802,17 +805,17 @@ footer {
     font-family: 'Nunito', sans-serif;
     font-weight: bolder;
     font-size: 15px;
-    color: #000000;
+    color: #00EEFF;
     margin-top: auto;
     margin-bottom: 75px;
     transition: 0.1s ease-in-out;
     opacity: 100%;
-    box-shadow: inset 3px 0 4px 0 rgba(0, 0, 0, 0.25),
-                inset -3px -4px 4px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25),
+                0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .start-project-next-btn:hover {
-    background-color: #00c6d4;
+    border: 1px solid #FFFFFF;
 }
 
 .start-project-next-btn:active {
@@ -945,10 +948,6 @@ footer {
     max-width: 500px;
 }
 
-#start-project-submit-btn {
-    border-radius: 100px;
-}
-
 /* ===== RESPONSIVE STYLES ===== */
 
 /* Tablets and smaller (below 1024px) */
@@ -999,6 +998,7 @@ footer {
     }
 
     #service-buttons-column-container {
+        min-width: 0px;
         grid-template-columns: 1fr;
         width: 50%;
         padding-left: 50px;
@@ -1034,6 +1034,7 @@ footer {
 @media (max-width: 768px) {
 
     #service-buttons-column-container {
+        min-width: 0px;
         grid-template-columns: 1fr;
         width: 100%;
         padding-left: 50px;
@@ -1046,6 +1047,7 @@ footer {
         width: calc(100% - 100px);
         margin-left: 50px;
         margin-right: 50px;
+        margin-bottom: 150px;
     }
 
     #start-project-header {

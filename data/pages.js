@@ -15,10 +15,6 @@ export const pages = [
                 "<button value='UI UX Design'>UI UX Design</button>" +
                 "</div>" +
                 "</div>" +
-                "<button onclick='nextPage()' id='start-project-next-btn' class='start-project-next-btn'>" +
-                "Next" +
-                "<img src='assets/start-project-next-arrow.svg' alt='NEXT'/>" +
-                "</button>" +
                 "</div>"
     },
 
@@ -37,8 +33,7 @@ export const pages = [
                 "</form>" +
                 "</div>" +
                 "<button onclick='nextPage()' id='start-project-next-btn' class='start-project-next-btn'>" +
-                "Next" +
-                "<img src='assets/start-project-next-arrow.svg' alt='NEXT'/>" +
+                "Continue" +
                 "</button>" +
                 "</div>"
     },
@@ -55,8 +50,7 @@ export const pages = [
                 "<input class='contact-input' id='start-project-number' placeholder='Phone Number' name='phone'/>" +
                 "</div>" +
                 "<button onclick='nextPage()' id='start-project-next-btn' class='start-project-next-btn'>" +
-                "Next" +
-                "<img src='assets/start-project-next-arrow.svg' alt='NEXT'/>" +
+                "Continue" +
                 "</button>" +
                 "</div>"
     },
