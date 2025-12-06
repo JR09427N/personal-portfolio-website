@@ -1,7 +1,36 @@
 import { projects_left_column, projects_right_column } from '../data/projects.js';
 import { process } from '../data/process.js';
-import { tools } from '../data/tools.js';
-import { services } from '../data/services.js';
+
+let hello = document.getElementById('hello');
+let hello_colors = ['#FFFF00', '#00EEFF', '#00FF00', '#FFA500'];
+let colors_length = hello_colors.length;
+
+// Wrap text in span for animation
+hello.innerHTML = `<span class="gradient-text">${hello.textContent}</span>`;
+let gradientText = hello.querySelector('.gradient-text');
+
+function updateGradient() {
+  let left_color_index = Math.floor(Math.random() * colors_length);
+  let mid_color_index = Math.floor(Math.random() * colors_length);
+  let right_color_index = Math.floor(Math.random() * colors_length);
+  
+  // Fade out
+  gradientText.style.opacity = '0';
+  
+  // Change gradient after fade
+  setTimeout(() => {
+    gradientText.style.background = `linear-gradient(90deg, ${hello_colors[left_color_index]}, ${hello_colors[mid_color_index]}, ${hello_colors[right_color_index]})`;
+    gradientText.style.webkitBackgroundClip = "text";
+    gradientText.style.webkitTextFillColor = "transparent";
+    gradientText.style.backgroundClip = "text";
+    
+    // Fade in
+    gradientText.style.opacity = '1';
+  }, 100);
+}
+
+updateGradient();
+setInterval(updateGradient, 4000);
 
 let sections = document.querySelectorAll('#home, #about, #projects, #contact');
 let navLinks = document.querySelectorAll('header a');

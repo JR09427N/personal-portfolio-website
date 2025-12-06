@@ -31,6 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(window.innerWidth);
     spButton.addEventListener('click', () => {
       spOpen = !spOpen;
+
+      spButton.style.left = "13.8vw";
+      setTimeout(() => {
+        spButton.style.left = "6.9vw";
+      }, 300);
       
       if(spOpen) {
         startProject.style.opacity = "1";

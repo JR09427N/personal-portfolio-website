@@ -26,8 +26,6 @@
     position: fixed;
     top: 45px;
     right: 6.9vw;
-    /* left: 50%;
-    transform: translate(-50%, -50%); */
     z-index: 9999;
 }
 
@@ -50,9 +48,7 @@
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(3px);          
     -webkit-backdrop-filter: blur(3px);
-    /* background-color: rgba(0, 0, 0, 0.45); */
     background-color: #00000080;
-    /* border: 1px solid rgb(0, 0, 0); */
     border-radius: 100px;
     white-space: nowrap;
     border: 1px solid #00EEFF10;
@@ -63,8 +59,20 @@
     border: 1px solid #00EEFF;
 }
 
+header a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
 
-header a, .top-start-project-btn {
+.top-start-project-btn div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+header a, .top-start-project-btn div p {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 15px;
@@ -72,7 +80,11 @@ header a, .top-start-project-btn {
     transition: 0.3s ease-in-out;
 }
 
-header a:hover, .top-start-project-btn:hover {
+header a, .top-start-project-btn div img {
+    height: 12px;
+}
+
+header a:hover, .top-start-project-btn div:hover {
     color: #00EEFF;
     cursor: pointer;
 }
@@ -94,6 +106,7 @@ header a:hover, .top-start-project-btn:hover {
 .home-section {
     height: 100vh;
     margin-bottom: 150px;
+    padding-top: 0;
 }
 
 .contact-section {
@@ -106,17 +119,27 @@ header a:hover, .top-start-project-btn:hover {
     width: 100%;
     height: 100%;
     text-align: center;
-    padding-top: 20vh;
 }
 
 div #hello {
     font-family: 'Poppins', sans-serif;
     font-size: 100px;
     font-weight: 500;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.gradient-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    transition: opacity 0.3s ease-in-out;
+    display: inline-block;
 }
 
 div #hello span {
-    color: #00EEFF;
+    /* color: #00EEFF; */
 }
 
 .about-column-container {
@@ -1101,6 +1124,7 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
     }
 
     #hamburger {
