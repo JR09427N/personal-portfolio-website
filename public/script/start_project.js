@@ -16,9 +16,13 @@ const progress1 = document.getElementById('start-project-progress-1');
 const progress2 = document.getElementById('start-project-progress-2');
 const progress3 = document.getElementById('start-project-progress-3');
 const menu = document.getElementById('mobile-nav-container');
+let spButton = null;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const spButton = document.getElementById('top-start-project-btn');
+
+  setStartButton();
+  window.addEventListener('resize', setStartButton);
+  
   const startProject = document.getElementById('start-project');
 
   if (startProject) {
@@ -52,8 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
       
       console.log("start project clicked", spOpen);
     });
-  }  
+  }
 });
+
+function setStartButton() {
+  const screenWidth = window.innerWidth;
+  console.log(screenWidth);
+
+  
+  if(screenWidth <= 768) {
+    spButton = document.getElementById('mobile-start-project-btn');
+  } else {
+    spButton = document.getElementById('top-start-project-btn');
+  }
+}
 
 function serviceListener() {
   console.log('serviceListener()');
