@@ -32,6 +32,18 @@ function updateGradient() {
 updateGradient();
 setInterval(updateGradient, 1200);
 
+let scrollTimer;
+window.addEventListener('scroll', function() {
+  let scrollGroup = document.getElementById('scroll-down-group');
+  scrollGroup.style.opacity = "0%";
+
+  clearTimeout(scrollTimer);
+
+  scrollTimer = setTimeout(function() {
+    scrollGroup.style.opacity = "100%";
+  }, 450);
+});
+
 let sections = document.querySelectorAll('#home, #about, #projects, #contact');
 let navLinks = document.querySelectorAll('header a');
 

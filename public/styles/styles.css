@@ -122,12 +122,42 @@ header a:hover, .top-start-project-btn div:hover {
     text-align: center;
 }
 
-div #hello {
+#hello {
     font-family: 'Poppins', sans-serif;
     font-size: 100px;
     font-weight: 500;
     margin-top: auto;
     margin-bottom: auto;
+    white-space: nowrap;
+}
+
+#scroll-down-group {
+    position: absolute;
+    top: 90vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-height: fit-content;
+    max-width: fit-content;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    color: transparent;
+    z-index: 9999;
+}
+
+#scroll-down-group:hover {
+    gap: 22px;
+    color: #FFFFFF;
+}
+
+#scroll-down-group img {
+    width: 12px;
 }
 
 .gradient-text {
@@ -137,10 +167,6 @@ div #hello {
     color: transparent;
     transition: opacity 0.3s ease-in-out;
     display: inline-block;
-}
-
-div #hello span {
-    /* color: #00EEFF; */
 }
 
 .about-column-container {
@@ -949,6 +975,10 @@ footer {
 
 /* Tablets and smaller (below 1024px) */
 @media (max-width: 1024px) {
+
+    #scroll-down-group img, #scroll-down-group p {
+        display: none;
+    }
     
     #about-photo {
         display: inline;
@@ -1050,6 +1080,17 @@ footer {
 /* Mobile devices (below 768px) */
 @media (max-width: 768px) {
 
+    #top-start-project-btn, #scroll-down-group img, #scroll-down-group p {
+        display: none;
+    }
+
+    #hello {
+        font-size: 50px;
+        font-weight: 600;
+        margin-top: 250px;
+        margin-bottom: 0;
+    }
+    
     #service-buttons-column-container {
         min-width: 0px;
         grid-template-columns: 1fr;
@@ -1143,7 +1184,7 @@ footer {
         padding-top: 150px;
         z-index: 10000;
         position: fixed;
-        background-color: #101010;
+        background-color: #000000;
         opacity: 0%;
     }
 
