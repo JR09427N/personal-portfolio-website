@@ -26,7 +26,15 @@ export const projects_left_column = [
         title: "Snake Game",
         bubbles: ["Java"],
         desc: "A classic snake game built in Java with Swing. Includes levels, sound effects, and increasing difficulty as the snake grows with each apple collected."
+    },
+
+    {
+        img: "assets/project-img-imp.png",
+        title: "Imposter Mobile Game",
+        bubbles: ["UI Design", "React"],
+        desc: "An imposter game designed in Figma and built with Ionic React for my Mobile Web App Development final. The imposter guesses the secret word and players vote to find the imposter, and the app was deployed using Firebase Hosting.",
     }
+
 ];
 
 export const projects_right_column = [
@@ -38,10 +46,10 @@ export const projects_right_column = [
     },
 
     {
-        img: "assets/project-img-imp.png",
-        title: "Imponexpo Design",
+        img: "assets/project-img-lin.png",
+        title: "LinkN'Lift UI Revamp",
         bubbles: ["UI Design"],
-        desc: "A Figma-based UI/UX design for Imponexpo, a B2B multivendor platform connecting global buyers and sellers."
+        desc: "A complete UI redesign for LinkN'Lift created for a Fiverr client. I revamped every page in a modern dark mode style, giving the app a cleaner, more polished, and user-friendly experience.",
     },
 
     {
@@ -56,5 +64,12 @@ export const projects_right_column = [
         title: "Vacation App",
         bubbles: ["UI Design"],
         desc: "A mobile UI/UX design freelance project for a platform where tourists can easily book activities, taxis, and vehicles for their trips."
-    }
+    },
+
+    {
+        img: "assets/project-img-impo.png",
+        title: "Imponexpo Design",
+        bubbles: ["UI Design"],
+        desc: "A Figma-based UI/UX design for Imponexpo, a B2B multivendor platform connecting global buyers and sellers."
+    },
 ];

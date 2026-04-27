@@ -82,8 +82,8 @@ function expandBtnClicked() {
   let expandBtnText = document.getElementById("projects-see-more-txt");
 
   if(isExpanded) {
-    listProjects(projects_left_column, projects_column_lef, 4);
-    listProjects(projects_right_column, projects_column_rig, 4);
+    listProjects(projects_left_column, projects_column_lef, 5);
+    listProjects(projects_right_column, projects_column_rig, 5);
     expandBtnText.innerText = "See less";
   }
 
