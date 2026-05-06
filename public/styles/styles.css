@@ -1087,7 +1087,7 @@ footer {
 /* Mobile devices (below 768px) */
 @media (max-width: 768px) {
 
-    #top-start-project-btn, #scroll-down-group img, #scroll-down-group p {
+    #top-start-project-btn, #scroll-down-group {
         display: none;
     }
 
